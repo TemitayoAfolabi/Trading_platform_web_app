@@ -18,7 +18,7 @@ env:
   AZURE_WEBAPP_NAME: Trading_platform_web_app  # set this to your application's name
   AZURE_WEBAPP_PACKAGE_PATH: '.' # set this to the path to your web app project
   JAVA_VERSION: '17'                # set this to the java version to use
-  AZURE_WEBAPP_PUBLISH_PROFILE: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}     # set GH repo secret with the publish profile of the web app
+  AZURE_WEBAPP_PUBLISH_PROFILE: ${{ secrets.MY_SECRET }}     # set GH repo secret with the publish profile of the web app
 
 jobs:
   build:
@@ -47,6 +47,6 @@ jobs:
       with: 
         app-name: ${{ env.temitestazure }}
         slot-name: 'development'
-        publish-profile: ${{ env.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        publish-profile: ${{ secrets.MY_SECRET }}
         package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/target/*.war'
 
