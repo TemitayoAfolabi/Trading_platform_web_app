@@ -70,6 +70,10 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+            				<mainClass>com.ab.OrderBookTradingApplication</mainClass>
+            				<layout>WAR</layout>
+        			</configuration>
 			</plugin>
 		</plugins>
 	</build>
