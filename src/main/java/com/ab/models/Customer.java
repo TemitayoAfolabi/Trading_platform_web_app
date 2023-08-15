@@ -12,7 +12,7 @@ public class Customer {
 	private String email;
 	private String password;
 	private Double balance;
-	
+	private String name;
 
 	public Customer() {
 		
