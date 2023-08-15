@@ -49,5 +49,4 @@ jobs:
         app-name: ${{ env.temitestazure }}
         slot-name: 'development'
         publish-profile: ${{ secrets.MY_SECRET }}
-        package: 'home/runner/work/Trading_platform_web_app/Trading_platform_web_app/target/*.war'
-
+        package: '${{System.DefaultWorkingDirectory}}/*.war'
