@@ -48,5 +48,5 @@ jobs:
         app-name: ${{ env.temitestazure }}
         slot-name: 'development'
         publish-profile: ${{ secrets.MY_SECRET }}
-        package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/*.war'
+        package: 'Trading_platform_web_app/target/*.war'
 
