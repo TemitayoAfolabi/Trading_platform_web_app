@@ -29,7 +29,7 @@ src/main/java/com/ab
 ├── controllers/                          # HTTP routes + page navigation
 ├── models/                               # JPA entities (Customer, Stock, OrderBook, TradingHistory)
 ├── repositories/                         # Database access layer (JpaRepository + custom queries)
-└── services/                             # Service layer (implemented in `com.ab.servicies`)
+└── services/                             # Service layer package (interfaces + implementations)
 
 src/main/resources
 └── application.properties                # DB, JPA and JSP view resolver config
@@ -65,7 +65,7 @@ These entities are mapped with `@Entity` and persisted by JPA.
 - **`TradingHistoryRepository`**
   - Filter trading history by customer id
 
-### 4) Services (`com.ab.services` concept, implemented in `com.ab.servicies`)
+### 4) Services (`com.ab.services` concept)
 
 Service interfaces define capabilities, and `*Impl` classes perform repository operations.
 
@@ -133,7 +133,7 @@ When a user submits an order (`POST /stocks/orderbook`):
 
 1. Current session user is loaded.
 2. Timestamp string is generated.
-3. If user has enough funds (`balance > price * quantity`), order is saved and trade history is saved.
+3. If user has enough funds, the order is saved and a trading history record is created.
 4. Balance update rules:
    - `sell` -> balance increases by `price * quantity`
    - `buy` -> balance decreases by `price * quantity` (only when funds check passes)
@@ -173,4 +173,3 @@ bash mvnw -DskipTests package
 
 - Session state is central to navigation (`session_customer`, `session_stock`).
 - Some classes/pages look like early/legacy scaffolding and are currently unused or partially used.
-- The package name `servicies` is intentionally kept as-is to match the current codebase.
