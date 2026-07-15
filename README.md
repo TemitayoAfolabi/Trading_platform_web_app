@@ -29,7 +29,7 @@ src/main/java/com/ab
 ├── controllers/                          # HTTP routes + page navigation
 ├── models/                               # JPA entities (Customer, Stock, OrderBook, TradingHistory)
 ├── repositories/                         # Database access layer (JpaRepository + custom queries)
-└── servicies/                            # Business logic layer (services + implementations)
+└── servicies/                            # Service layer package (interfaces + implementations)
 
 src/main/resources
 └── application.properties                # DB, JPA and JSP view resolver config
@@ -65,7 +65,7 @@ These entities are mapped with `@Entity` and persisted by JPA.
 - **`TradingHistoryRepository`**
   - Filter trading history by customer id
 
-### 4) Services (`com.ab.servicies`)
+### 4) Services (`com.ab.servicies` package)
 
 Service interfaces define capabilities, and `*Impl` classes perform repository operations.
 
@@ -150,11 +150,11 @@ When a user submits an order (`POST /stocks/orderbook`):
 ### Steps
 
 1. Configure DB credentials in:
-   - `/home/runner/work/Trading_platform_web_app/Trading_platform_web_app/src/main/resources/application.properties`
+   - `src/main/resources/application.properties`
 2. Start the app:
 
 ```bash
-cd /home/runner/work/Trading_platform_web_app/Trading_platform_web_app
+cd Trading_platform_web_app
 bash mvnw spring-boot:run
 ```
 
@@ -164,7 +164,7 @@ bash mvnw spring-boot:run
 ### Build and test
 
 ```bash
-cd /home/runner/work/Trading_platform_web_app/Trading_platform_web_app
+cd Trading_platform_web_app
 bash mvnw test
 bash mvnw -DskipTests package
 ```
