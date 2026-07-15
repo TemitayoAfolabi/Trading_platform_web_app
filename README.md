@@ -154,7 +154,7 @@ When a user submits an order (`POST /stocks/orderbook`):
 2. Start the app:
 
 ```bash
-cd Trading_platform_web_app
+cd <project-root>
 bash mvnw spring-boot:run
 ```
 
@@ -164,7 +164,7 @@ bash mvnw spring-boot:run
 ### Build and test
 
 ```bash
-cd Trading_platform_web_app
+cd <project-root>
 bash mvnw test
 bash mvnw -DskipTests package
 ```
@@ -173,3 +173,4 @@ bash mvnw -DskipTests package
 
 - Session state is central to navigation (`session_customer`, `session_stock`).
 - Some classes/pages look like early/legacy scaffolding and are currently unused or partially used.
+- The app currently uses Spring Boot 2.7.3 for compatibility with the existing codebase.
