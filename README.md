@@ -29,7 +29,7 @@ src/main/java/com/ab
 ├── controllers/                          # HTTP routes + page navigation
 ├── models/                               # JPA entities (Customer, Stock, OrderBook, TradingHistory)
 ├── repositories/                         # Database access layer (JpaRepository + custom queries)
-└── servicies/                            # Service layer package (interfaces + implementations)
+└── services/                             # Service layer (implemented in `com.ab.servicies`)
 
 src/main/resources
 └── application.properties                # DB, JPA and JSP view resolver config
@@ -65,7 +65,7 @@ These entities are mapped with `@Entity` and persisted by JPA.
 - **`TradingHistoryRepository`**
   - Filter trading history by customer id
 
-### 4) Services (`com.ab.servicies` package)
+### 4) Services (`com.ab.services` concept, implemented in `com.ab.servicies`)
 
 Service interfaces define capabilities, and `*Impl` classes perform repository operations.
 
