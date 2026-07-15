@@ -61,7 +61,7 @@ These entities are mapped with `@Entity` and persisted by JPA.
   - Standard CRUD/listing via `JpaRepository`
 - **`OrderBookRepository`**
   - Standard order CRUD
-  - Custom native query `showOrderBookCustomerId` to aggregate customer orders by stock
+  - Custom native query (`showOrderBookCustomerId`) that aggregates customer orders by stock
 - **`TradingHistoryRepository`**
   - Filter trading history by customer id
 
@@ -155,7 +155,13 @@ When a user submits an order (`POST /stocks/orderbook`):
 
 ```bash
 cd <project-root>
-bash mvnw spring-boot:run
+./mvnw spring-boot:run
+```
+
+Windows (PowerShell/CMD):
+
+```bash
+mvnw.cmd spring-boot:run
 ```
 
 3. Open the app in browser:
@@ -165,8 +171,15 @@ bash mvnw spring-boot:run
 
 ```bash
 cd <project-root>
-bash mvnw test
-bash mvnw -DskipTests package
+./mvnw test
+./mvnw -DskipTests package
+```
+
+Windows (PowerShell/CMD):
+
+```bash
+mvnw.cmd test
+mvnw.cmd -DskipTests package
 ```
 
 ## Notes
